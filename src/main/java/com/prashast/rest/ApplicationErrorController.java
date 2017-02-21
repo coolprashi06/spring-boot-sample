@@ -59,4 +59,3 @@ public class ApplicationErrorController implements ErrorController {
         return errorAttributes.getErrorAttributes(requestAttributes, includeStackTrace);
     }
 }
-
