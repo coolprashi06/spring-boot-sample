@@ -1,10 +1,12 @@
-package com.prashast.rest;
+package com.prashast.errorcontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorAttributes;
 import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.http.HttpStatus;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -36,6 +38,7 @@ public class ApplicationErrorController implements ErrorController {
     }
 
     @RequestMapping
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map<String, Object> error(HttpServletRequest aRequest){
         Map<String, Object> body = getErrorAttributes(aRequest,getTraceParameter(aRequest));
         String trace = (String) body.get("trace");
