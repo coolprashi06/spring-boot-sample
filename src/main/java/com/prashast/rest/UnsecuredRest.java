@@ -17,6 +17,7 @@ public class UnsecuredRest {
 
     public final static String UNSECURED_PATH = "/unsecured";
 
+
     @RequestMapping
     public String unsecuredResource(){
         return "hello, this is unsecured resource";
