@@ -29,7 +29,7 @@ public class Test {
         minute = calendar.get(Calendar.MINUTE);
         second = calendar.get(Calendar.SECOND);
 
-        System.out.printf("America time after updating timezone: %02d:%02d:%02d\n", hour, minute, second); //19:00
+        System.out.printf("America time: %02d:%02d:%02d\n", hour, minute, second); //19:00
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -47,7 +47,7 @@ public class Test {
         minute = localTime.get(Calendar.MINUTE);
         second = localTime.get(Calendar.SECOND);
 
-        System.out.printf("Local time  : %02d:%02d:%02d\n", hour, minute, second); //00:00
+        System.out.printf("UTC time  : %02d:%02d:%02d\n", hour, minute, second); //00:00
 
         Calendar americaTime = Calendar.getInstance(TimeZone.getTimeZone("America/New_York"));
         int year = localTime.get(Calendar.YEAR);
@@ -56,7 +56,7 @@ public class Test {
         americaTime.set(year, month, day , hour, minute, second);
 
 
-        System.out.printf("America time after applying Tz to UTC: %02d:%02d:%02d\n", hour, minute, second); //00:00
+        System.out.printf("America time: %02d:%02d:%02d\n", hour, minute, second); //00:00
 
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX");
         sdf1.setTimeZone(TimeZone.getTimeZone("UTC"));
