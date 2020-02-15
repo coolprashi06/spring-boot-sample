@@ -74,5 +74,13 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>local-release</name>
+			<url>http://localhost:8081/artifactory/libs-snapshot</url>
+		</repository>
+	</distributionManagement>
+
 
 </project>
