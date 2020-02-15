@@ -25,7 +25,7 @@ pipeline {
 
         stage('Deploy'){
             steps {
-                sh 'curl -u admin:Adobe23$ -X PUT "http://localhost:8081/artifactory/libs-snapshot/com/prashast/spring-boot-sample" -T fileupload/spring-boot-sample-0.0.1-SNAPSHOT.jar'
+                sh 'curl -u admin:Adobe23$ -X PUT "http://localhost:8081/artifactory/libs-snapshot/com/prashast/spring-boot-sample/spring-boot-sample-0.0.1-SNAPSHOT.jar" -T fileupload/spring-boot-sample-0.0.1-SNAPSHOT.jar'
                 sh 'echo Deployed artifact to Artifactory server'
             }
         }
