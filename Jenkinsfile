@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh 'mvn clean install -s settings.xml',
+                sh 'mvn clean install -s settings.xml'
                 sh 'echo Now deploying to Artifcatory server'
                 sh 'mkdir fileupload'
                 sh 'cp target/spring-boot-sample-0.0.1-SNAPSHOT.jar fileupload/'
